@@ -11,7 +11,7 @@ def process_ipc_benchmarks(results1, results2):
 
     assert len(ipc_benchmarks_1) == len(ipc_benchmarks_2)
 
-    print(f"|IPC Benchmark|Direction|IPC length|In same VSpace|Mean (before patch)|Stddev (before patch)|Mean (after patch)|Stddev (after patch)|Change|")
+    print(f"|IPC Benchmark|Direction|IPC length|In same VSpace|Mean (before patch)|Stddev (before patch)|Mean (after patch)|Stddev (after patch)|Change in mean|")
     print(f"|-------------|---------|----------|--------------|-------------------|---------------------|-----------------|--------------------|------|")
     for i in range(len(ipc_benchmarks_1)):
         name1 = ipc_benchmarks_1[i]["Function"]
@@ -57,8 +57,8 @@ def process_regular(results1, results2, benchmark):
     assert ipc_benchmarks_2 is not None
     assert len(ipc_benchmarks_1) == len(ipc_benchmarks_2)
 
-    print(f"|Benchmark|Priority|Mean (before patch)|Stddev (before patch)|Mean (after patch)|Stddev (after patch)|Change|")
-    print(f"|---------|--------|-------------------|---------------------|------------------|--------------------|------|")
+    print(f"|Benchmark|Priority|Mean (before patch)|Stddev (before patch)|Mean (after patch)|Stddev (after patch)|Change in mean|")
+    print(f"|---------|--------|-------------------|---------------------|------------------|--------------------|--------------|")
 
     for i in range(len(ipc_benchmarks_1)):
         prio = ipc_benchmarks_1[i]["Prio"]
